@@ -1,0 +1,952 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="注：以下题目来源于九度
+题目1000题目描述：求整数a，b的和。
+输入：测试案例有多行，每行为a，b的值。
+输出：输出多行，对应a+b的结果。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Jobdu 1000-1010（未完待续）">
+<meta property="og:url" content="http://yoursite.com/2017/04/11/jobdu1000-1014/index.html">
+<meta property="og:site_name" content="ttinch's Blog">
+<meta property="og:description" content="注：以下题目来源于九度
+题目1000题目描述：求整数a，b的和。
+输入：测试案例有多行，每行为a，b的值。
+输出：输出多行，对应a+b的结果。">
+<meta property="og:updated_time" content="2017-10-08T12:26:08.932Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Jobdu 1000-1010（未完待续）">
+<meta name="twitter:description" content="注：以下题目来源于九度
+题目1000题目描述：求整数a，b的和。
+输入：测试案例有多行，每行为a，b的值。
+输出：输出多行，对应a+b的结果。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/04/11/jobdu1000-1014/"/>
+
+
+
+
+
+  <title> Jobdu 1000-1010（未完待续） | ttinch's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ttinch's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不忘初心</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/11/jobdu1000-1014/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ttinch">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ttinch's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Jobdu 1000-1010（未完待续）
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-11T22:23:17+08:00">
+                2017-04-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/研究生机试备战之旅/" itemprop="url" rel="index">
+                    <span itemprop="name">研究生机试备战之旅</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/研究生机试备战之旅/九度1000-1014/" itemprop="url" rel="index">
+                    <span itemprop="name">九度1000-1014</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>注：<strong><a href="http://ac.jobdu.com/problemset.php" target="_blank" rel="external">以下题目来源于九度</a></strong></p>
+<h2 id="题目1000"><a href="#题目1000" class="headerlink" title="题目1000"></a><strong>题目1000</strong></h2><h3 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h3><p>求整数a，b的和。</p>
+<h3 id="输入："><a href="#输入：" class="headerlink" title="输入："></a>输入：</h3><p>测试案例有多行，每行为a，b的值。</p>
+<h3 id="输出："><a href="#输出：" class="headerlink" title="输出："></a>输出：</h3><p>输出多行，对应a+b的结果。<br><a id="more"></a></p>
+<h3 id="样例输入："><a href="#样例输入：" class="headerlink" title="样例输入："></a>样例输入：</h3><p>1 2<br>4 5<br>6 9</p>
+<h3 id="样例输出："><a href="#样例输出：" class="headerlink" title="样例输出："></a>样例输出：</h3><p>3<br>9<br>15</p>
+<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><p>这道题就是用到了文件的结束标识符：EOF，在windows下是ctrl+z，在命令行窗口运行遇到文件结束符才结束的程序时，到该结束时，先按一下回车，再按ctrl+z，再按回车就好了。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">int</span> a,b;</div><div class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;a,&amp;b)!=EOF)&#123;</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,a+b);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="题目1001"><a href="#题目1001" class="headerlink" title="题目1001"></a><strong>题目1001</strong></h2><h3 id="题目描述：-1"><a href="#题目描述：-1" class="headerlink" title="题目描述："></a>题目描述：</h3><p>This time, you are supposed to find A+B where A and B are two matrices, and then count the number of zero rows and columns.</p>
+<h3 id="输入：-1"><a href="#输入：-1" class="headerlink" title="输入："></a>输入：</h3><p>The input consists of several test cases, each starts with a pair of positive integers M and N (≤10) which are the number of rows and columns of the matrices, respectively. Then 2*M lines follow, each contains N integers in [-100, 100], separated by a space. The first M lines correspond to the elements of A and the second M lines to that of B.</p>
+<p>The input is terminated by a zero M and that case must NOT be processed.</p>
+<h3 id="输出：-1"><a href="#输出：-1" class="headerlink" title="输出："></a>输出：</h3><p>For each test case you should output in one line the total number of zero rows and columns of A+B.</p>
+<h3 id="样例输入：-1"><a href="#样例输入：-1" class="headerlink" title="样例输入："></a>样例输入：</h3><p>2 2<br>1 1<br>1 1<br>-1 -1<br>10 9<br>2 3<br>1 2 3<br>4 5 6<br>-1 -2 -3<br>-4 -5 -6<br>0</p>
+<h3 id="样例输出：-1"><a href="#样例输出：-1" class="headerlink" title="样例输出："></a>样例输出：</h3><p>1<br>5</p>
+<h3 id="代码：-1"><a href="#代码：-1" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">int</span> m,n;</div><div class="line">    <span class="keyword">int</span> i,j,k;</div><div class="line">    <span class="keyword">while</span>(<span class="number">1</span>)&#123;</div><div class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;m);</div><div class="line">        <span class="keyword">if</span>(m==<span class="number">0</span>)</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</div><div class="line">        <span class="keyword">int</span> a[m][n][<span class="number">2</span>],b[m][n];</div><div class="line">        <span class="keyword">int</span> num=<span class="number">0</span>,r;</div><div class="line">        <span class="comment">// 读取数据</span></div><div class="line">        <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">2</span>;i++)&#123;</div><div class="line">            <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;m;j++)&#123;</div><div class="line">                <span class="keyword">for</span>(k=<span class="number">0</span>;k&lt;n;k++)&#123;</div><div class="line">                    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[j][k][i]);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="comment">// 相加</span></div><div class="line">        <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;m;j++)&#123;</div><div class="line">            <span class="keyword">for</span>(k=<span class="number">0</span>;k&lt;n;k++)&#123;</div><div class="line">                b[j][k]=a[j][k][<span class="number">0</span>]+a[j][k][<span class="number">1</span>];</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="comment">// 判断为0的行</span></div><div class="line">        <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;m;j++)&#123;</div><div class="line">            r=<span class="number">0</span>;</div><div class="line">            <span class="keyword">for</span>(k=<span class="number">0</span>;k&lt;n;k++)&#123;</div><div class="line">                <span class="keyword">if</span>(b[j][k]!=<span class="number">0</span>)</div><div class="line">                    r=<span class="number">1</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span>(r==<span class="number">0</span>)&#123;</div><div class="line">                num++;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="comment">// 判断为0的列</span></div><div class="line">        <span class="keyword">for</span>(k=<span class="number">0</span>;k&lt;n;k++)&#123;</div><div class="line">            r=<span class="number">0</span>;</div><div class="line">            <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;m;j++)&#123;</div><div class="line">                <span class="keyword">if</span>(b[j][k]!=<span class="number">0</span>)</div><div class="line">                    r=<span class="number">1</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span>(r==<span class="number">0</span>)&#123;</div><div class="line">                num++;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,num);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="题目1002"><a href="#题目1002" class="headerlink" title="题目1002"></a><strong>题目1002</strong></h2><h3 id="题目描述：-2"><a href="#题目描述：-2" class="headerlink" title="题目描述："></a>题目描述：</h3><p>Grading hundreds of thousands of Graduate Entrance Exams is a hard work. It is even harder to design a process to make the results as fair as possible. One way is to assign each exam problem to 3 independent experts. If they do not agree to each other, a judge is invited to make the final decision. Now you are asked to write a program to help this process.</p>
+<p>For each problem, there is a full-mark P and a tolerance T(\&lt;P) given. The grading rules are:</p>
+<ul>
+<li>A problem will first be assigned to 2 experts, to obtain G1 and G2. If the difference is within the tolerance, that is, if |G1 - G2| ≤ T, this problem’s grade will be the average of G1 and G2.</li>
+<li>If the difference exceeds T, the 3rd expert will give G3.</li>
+<li><font color="#0099ff"><strong>If G3 is within the tolerance with either G1 or G2</strong></font>, but NOT both, then this problem’s grade will be the average of G3 and the closest grade.</li>
+<li>If G3 is within the tolerance with both G1 and G2, then this problem’s grade will be the maximum of the three grades.</li>
+<li>If G3 is within the tolerance with neither G1 nor G2, a judge will give the final grade GJ.</li>
+</ul>
+<h3 id="输入：-2"><a href="#输入：-2" class="headerlink" title="输入："></a>输入：</h3><p>Each input file may contain more than one test case.<br>Each case occupies a line containing six positive integers: P, T, G1, G2, G3, and GJ, as described in the problem. It is guaranteed that all the grades are valid, that is, in the interval [0, P].</p>
+<h3 id="输出：-2"><a href="#输出：-2" class="headerlink" title="输出："></a>输出：</h3><p>For each test case you should output the final grade of the problem in a line. The answer must be accurate to 1 decimal place.</p>
+<h3 id="样例输入：-2"><a href="#样例输入：-2" class="headerlink" title="样例输入："></a>样例输入：</h3><p>20 2 15 13 10 18</p>
+<h3 id="样例输出：-2"><a href="#样例输出：-2" class="headerlink" title="样例输出："></a>样例输出：</h3><p>14.0</p>
+<h3 id="代码：-2"><a href="#代码：-2" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">max</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>(a&gt;b)</div><div class="line">        <span class="keyword">return</span> a;</div><div class="line">    <span class="keyword">else</span></div><div class="line">        <span class="keyword">return</span> b;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">int</span> p,t,g1,g2,g3,gj;</div><div class="line">    <span class="keyword">float</span> result;</div><div class="line">    <span class="comment">// while(scanf("%d %d %d %d %d %d",&amp;p,&amp;t,&amp;g1,&amp;g2,&amp;g3,&amp;gj)!=EOF)&#123;</span></div><div class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;p)!=EOF)&#123;</div><div class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d%d%d%d"</span>,&amp;t,&amp;g1,&amp;g2,&amp;g3,&amp;gj);</div><div class="line">        <span class="keyword">if</span>(<span class="built_in">abs</span>(g1-g2)&lt;=t)&#123;</div><div class="line">            result=(g1+g2)/<span class="number">2.0</span>;</div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">abs</span>(g1-g3)&gt;t &amp;&amp; <span class="built_in">abs</span>(g2-g3)&gt;t)&#123;</div><div class="line">            result=gj;</div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">abs</span>(g1-g3)&lt;=t &amp;&amp; <span class="built_in">abs</span>(g2-g3)&lt;=t)&#123;</div><div class="line">            result=max(g1,g2);</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            <span class="keyword">if</span>(<span class="built_in">abs</span>(g1-g3)&gt;<span class="built_in">abs</span>(g2-g3))</div><div class="line">                result=(g2+g3)/<span class="number">2.0</span>;</div><div class="line">            <span class="keyword">else</span></div><div class="line">                result=(g1+g3)/<span class="number">2.0</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"%.1f\n"</span>,result*<span class="number">1.0</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="题目1003"><a href="#题目1003" class="headerlink" title="题目1003"></a><strong>题目1003</strong></h2><h3 id="题目描述：-3"><a href="#题目描述：-3" class="headerlink" title="题目描述："></a>题目描述：</h3><p>给定两个整数A和B，其表示形式是：从个位开始，每三位数用逗号”,”隔开。</p>
+<p>现在请计算A+B的结果，并以正常形式输出。</p>
+<h3 id="输入：-3"><a href="#输入：-3" class="headerlink" title="输入："></a>输入：</h3><p>输入包含多组数据数据，每组数据占一行，由两个整数A和B组成（-10^9 &lt; A,B &lt; 10^9）。</p>
+<h3 id="输出：-3"><a href="#输出：-3" class="headerlink" title="输出："></a>输出：</h3><p>请计算A+B的结果，并以正常形式输出，每组数据占一行。</p>
+<h3 id="样例输入：-3"><a href="#样例输入：-3" class="headerlink" title="样例输入："></a>样例输入：</h3><p>-234,567,890 123,456,789<br>1,234 2,345,678</p>
+<h3 id="样例输出：-3"><a href="#样例输出：-3" class="headerlink" title="样例输出："></a>样例输出：</h3><p>-111111101<br>2346912</p>
+<h3 id="代码：-3"><a href="#代码：-3" class="headerlink" title="代码："></a>代码：</h3><p>注：直接读取数字，运行错误（原因未知）<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">pow</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>(a==<span class="number">0</span>)</div><div class="line">        <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    <span class="keyword">if</span>(b==<span class="number">0</span>)</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(b==<span class="number">1</span>)</div><div class="line">        <span class="keyword">return</span> a;</div><div class="line">    <span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">return</span> a*<span class="built_in">pow</span>(a,b<span class="number">-1</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">long</span> <span class="keyword">int</span> len=<span class="number">10</span>;</div><div class="line">    <span class="keyword">long</span> <span class="keyword">int</span> a[len],b[len];</div><div class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[<span class="number">0</span>])!=EOF)&#123;</div><div class="line">        <span class="keyword">long</span> <span class="keyword">int</span> int_a=<span class="number">0</span>,int_b=<span class="number">0</span>;</div><div class="line">        <span class="keyword">long</span> <span class="keyword">int</span> num_a=<span class="number">1</span>,num_b=<span class="number">0</span>,i;</div><div class="line">        <span class="keyword">char</span> c;</div><div class="line"></div><div class="line">        <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;len;i++)&#123;</div><div class="line">            c=getchar();</div><div class="line">            <span class="keyword">if</span>(c==<span class="string">' '</span>||c==<span class="string">'\n'</span>)</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]); <span class="comment">//错误，当i从1开始时结果遗异常</span></div><div class="line">            num_a++;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;num_a;i++)</div><div class="line">            int_a+=<span class="built_in">abs</span>(a[i])*<span class="built_in">pow</span>(<span class="number">10</span>,(num_a-i<span class="number">-1</span>)*<span class="number">3</span>);</div><div class="line">        <span class="keyword">if</span>(a[<span class="number">0</span>]&lt;<span class="number">0</span>)</div><div class="line">            int_a=-int_a;</div><div class="line"></div><div class="line">        <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;len;i++)&#123;</div><div class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;b[i]);</div><div class="line">            num_b++;</div><div class="line">            c=getchar();</div><div class="line">            <span class="keyword">if</span>(c==<span class="string">' '</span>||c==<span class="string">'\n'</span>)</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;num_b;i++)</div><div class="line">            int_b+=<span class="built_in">abs</span>(b[i])*<span class="built_in">pow</span>(<span class="number">10</span>,(num_b-i<span class="number">-1</span>)*<span class="number">3</span>);</div><div class="line">        <span class="keyword">if</span>(b[<span class="number">0</span>]&lt;<span class="number">0</span>)</div><div class="line">            int_b=-int_b;</div><div class="line"></div><div class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,int_a+int_b);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>注：读取两个字符串再转为数字，正确<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;  </span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;  </span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;  </span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;  </span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;  </div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">reverse</span><span class="params">(<span class="built_in">string</span> a)</span>  </span></div><div class="line">&#123;  </div><div class="line">    <span class="keyword">int</span> x=<span class="number">0</span>;  </div><div class="line">    <span class="keyword">if</span>(a[<span class="number">0</span>]==<span class="string">'-'</span>)  </div><div class="line">    &#123;  </div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;a.length();i++)  </div><div class="line">            <span class="keyword">if</span>(a[i]&gt;=<span class="string">'0'</span>&amp;&amp;a[i]&lt;=<span class="string">'9'</span>)  </div><div class="line">                x = x*<span class="number">10</span>+a[i]-<span class="string">'0'</span>;  </div><div class="line">        x = -x;  </div><div class="line">    &#125;  </div><div class="line">    <span class="keyword">else</span>  </div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;a.length();i++)  </div><div class="line">            <span class="keyword">if</span>(a[i]&gt;=<span class="string">'0'</span>&amp;&amp;a[i]&lt;=<span class="string">'9'</span>)  </div><div class="line">                x = x*<span class="number">10</span>+a[i]-<span class="string">'0'</span>;  </div><div class="line">    <span class="keyword">return</span> x;  </div><div class="line">&#125;  </div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span>  </span></div><div class="line">&#123;  </div><div class="line"></div><div class="line">    <span class="built_in">string</span> a,b;  </div><div class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;a&gt;&gt;b)  </div><div class="line">    &#123;  </div><div class="line">        <span class="built_in">cout</span>&lt;&lt;reverse(a)+reverse(b)&lt;&lt;<span class="built_in">endl</span>;  </div><div class="line">    &#125;  </div><div class="line"></div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;  </div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/09/issue772/" rel="next" title="Issue 772：Police And The Thief">
+                <i class="fa fa-chevron-left"></i> Issue 772：Police And The Thief
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/13/c++_prime/" rel="prev" title="C++ 知识点总结">
+                C++ 知识点总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="ttinch" />
+          <p class="site-author-name" itemprop="name">ttinch</p>
+           
+              <p class="site-description motion-element" itemprop="description">初学者的随笔</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ttinch" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/your-user-name" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目1000"><span class="nav-number">1.</span> <span class="nav-text">题目1000</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目描述："><span class="nav-number">1.1.</span> <span class="nav-text">题目描述：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入："><span class="nav-number">1.2.</span> <span class="nav-text">输入：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出："><span class="nav-number">1.3.</span> <span class="nav-text">输出：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例输入："><span class="nav-number">1.4.</span> <span class="nav-text">样例输入：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例输出："><span class="nav-number">1.5.</span> <span class="nav-text">样例输出：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码："><span class="nav-number">1.6.</span> <span class="nav-text">代码：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题目1001"><span class="nav-number">2.</span> <span class="nav-text">题目1001</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目描述：-1"><span class="nav-number">2.1.</span> <span class="nav-text">题目描述：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入：-1"><span class="nav-number">2.2.</span> <span class="nav-text">输入：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出：-1"><span class="nav-number">2.3.</span> <span class="nav-text">输出：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例输入：-1"><span class="nav-number">2.4.</span> <span class="nav-text">样例输入：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例输出：-1"><span class="nav-number">2.5.</span> <span class="nav-text">样例输出：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码：-1"><span class="nav-number">2.6.</span> <span class="nav-text">代码：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题目1002"><span class="nav-number">3.</span> <span class="nav-text">题目1002</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目描述：-2"><span class="nav-number">3.1.</span> <span class="nav-text">题目描述：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入：-2"><span class="nav-number">3.2.</span> <span class="nav-text">输入：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出：-2"><span class="nav-number">3.3.</span> <span class="nav-text">输出：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例输入：-2"><span class="nav-number">3.4.</span> <span class="nav-text">样例输入：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例输出：-2"><span class="nav-number">3.5.</span> <span class="nav-text">样例输出：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码：-2"><span class="nav-number">3.6.</span> <span class="nav-text">代码：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题目1003"><span class="nav-number">4.</span> <span class="nav-text">题目1003</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目描述：-3"><span class="nav-number">4.1.</span> <span class="nav-text">题目描述：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入：-3"><span class="nav-number">4.2.</span> <span class="nav-text">输入：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出：-3"><span class="nav-number">4.3.</span> <span class="nav-text">输出：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例输入：-3"><span class="nav-number">4.4.</span> <span class="nav-text">样例输入：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例输出：-3"><span class="nav-number">4.5.</span> <span class="nav-text">样例输出：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码：-3"><span class="nav-number">4.6.</span> <span class="nav-text">代码：</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ttinch</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+
+  
+
+</body>
+</html>

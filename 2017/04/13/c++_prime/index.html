@@ -1,0 +1,976 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="c++," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="读取数量不定的操作符文件结束符，输入Ctrl+V，然后输入ENter123while (std::cin &amp;gt;&amp;gt; value) &amp;#123;  /* code */&amp;#125;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++ 知识点总结">
+<meta property="og:url" content="http://yoursite.com/2017/04/13/c++_prime/index.html">
+<meta property="og:site_name" content="ttinch's Blog">
+<meta property="og:description" content="读取数量不定的操作符文件结束符，输入Ctrl+V，然后输入ENter123while (std::cin &amp;gt;&amp;gt; value) &amp;#123;  /* code */&amp;#125;">
+<meta property="og:updated_time" content="2017-10-08T12:26:00.067Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="C++ 知识点总结">
+<meta name="twitter:description" content="读取数量不定的操作符文件结束符，输入Ctrl+V，然后输入ENter123while (std::cin &amp;gt;&amp;gt; value) &amp;#123;  /* code */&amp;#125;">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/04/13/c++_prime/"/>
+
+
+
+
+
+  <title> C++ 知识点总结 | ttinch's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ttinch's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不忘初心</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/13/c++_prime/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ttinch">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ttinch's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                C++ 知识点总结
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-13T20:34:41+08:00">
+                2017-04-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/研究生机试备战之旅/" itemprop="url" rel="index">
+                    <span itemprop="name">研究生机试备战之旅</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="读取数量不定的操作符"><a href="#读取数量不定的操作符" class="headerlink" title="读取数量不定的操作符"></a>读取数量不定的操作符</h2><p>文件结束符，输入Ctrl+V，然后输入ENter<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span> (<span class="built_in">std</span>::<span class="built_in">cin</span> &gt;&gt; value) &#123;</div><div class="line">  <span class="comment">/* code */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<h2 id="字符串string"><a href="#字符串string" class="headerlink" title="字符串string"></a>字符串string</h2><h3 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">  <span class="built_in">string</span> s=<span class="string">"123456789"</span>;</div><div class="line">  s.substr(<span class="number">1</span>,<span class="number">5</span>); <span class="comment">//从1开始取，连续取出5位的字符</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="字符-字符串-与-数字-的转换（待补充）"><a href="#字符-字符串-与-数字-的转换（待补充）" class="headerlink" title="字符/字符串 与 数字 的转换（待补充）"></a>字符/字符串 与 数字 的转换（待补充）</h3><h4 id="字符与数字的转换"><a href="#字符与数字的转换" class="headerlink" title="字符与数字的转换"></a>字符与数字的转换</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">int</span> n = <span class="number">5</span>;</div><div class="line">    <span class="keyword">char</span> c = <span class="string">'8'</span>;</div><div class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="keyword">char</span>(n+<span class="string">'0'</span>)&lt;&lt;<span class="built_in">endl</span>;</div><div class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="keyword">int</span>(c-<span class="string">'0'</span>)&lt;&lt;<span class="built_in">endl</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="字符串与数字的转换"><a href="#字符串与数字的转换" class="headerlink" title="字符串与数字的转换"></a>字符串与数字的转换</h4><h5 id="数字转字符串：使用sprintf-函数"><a href="#数字转字符串：使用sprintf-函数" class="headerlink" title="数字转字符串：使用sprintf()函数"></a>数字转字符串：使用sprintf()函数</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">char</span> str[<span class="number">10</span>];</div><div class="line"><span class="keyword">int</span> a=<span class="number">1234321</span>;</div><div class="line"><span class="built_in">sprintf</span>(str,<span class="string">"%d"</span>,a);</div><div class="line"></div><div class="line"><span class="keyword">char</span> str[<span class="number">10</span>];</div><div class="line"><span class="keyword">double</span> a=<span class="number">123.321</span>;</div><div class="line"><span class="built_in">sprintf</span>(str,<span class="string">"%.3lf"</span>,a);</div><div class="line"></div><div class="line"><span class="keyword">char</span> str[<span class="number">10</span>];</div><div class="line"><span class="keyword">int</span> a=<span class="number">175</span>;</div><div class="line"><span class="built_in">sprintf</span>(str,<span class="string">"%x"</span>,a);<span class="comment">//10进制转换成16进制，如果输出大写的字母是sprintf(str,"%X",a)</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">char</span> *<span class="title">itoa</span><span class="params">(<span class="keyword">int</span> value, <span class="keyword">char</span>* <span class="built_in">string</span>, <span class="keyword">int</span> radix)</span></span>;</div><div class="line"><span class="comment">//同样也可以将数字转字符串，不过itoa()这个函数是平台相关的（不是标准里的），故在这里不推荐使用这个函数。</span></div></pre></td></tr></table></figure>
+<h5 id="字符串转数字：使用sscanf-函数"><a href="#字符串转数字：使用sscanf-函数" class="headerlink" title="字符串转数字：使用sscanf()函数"></a>字符串转数字：使用sscanf()函数</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">char</span> str[]=<span class="string">"1234321"</span>;</div><div class="line"><span class="keyword">int</span> a;</div><div class="line"><span class="built_in">sscanf</span>(str,<span class="string">"%d"</span>,&amp;a);</div><div class="line"></div><div class="line"><span class="keyword">char</span> str[]=<span class="string">"123.321"</span>;</div><div class="line"><span class="keyword">double</span> a;</div><div class="line"><span class="built_in">sscanf</span>(str,<span class="string">"%lf"</span>,&amp;a);</div><div class="line"></div><div class="line"><span class="keyword">char</span> str[]=<span class="string">"AF"</span>;</div><div class="line"><span class="keyword">int</span> a;</div><div class="line"><span class="built_in">sscanf</span>(str,<span class="string">"%x"</span>,&amp;a); <span class="comment">//16进制转换成10进制</span></div></pre></td></tr></table></figure>
+<p>另外也可以使用atoi(),atol(),atof().</p>
+<h5 id="使用stringstream类"><a href="#使用stringstream类" class="headerlink" title="使用stringstream类"></a>使用stringstream类</h5><p>用ostringstream对象写一个字符串，类似于sprintf()</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sstream&gt;</span></span></div><div class="line"><span class="built_in">ostringstream</span> s1;</div><div class="line"><span class="keyword">int</span> i = <span class="number">22</span>;</div><div class="line">s1 &lt;&lt; <span class="string">"Hello "</span> &lt;&lt; i &lt;&lt; <span class="built_in">endl</span>;</div><div class="line"><span class="built_in">string</span> s2 = s1.str();</div><div class="line"><span class="built_in">cout</span> &lt;&lt; s2;</div></pre></td></tr></table></figure>
+<p>用istringstream对象读一个字符串，类似于sscanf()</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sstream&gt;</span></span></div><div class="line"><span class="built_in">istringstream</span> stream1;</div><div class="line"><span class="built_in">string</span> string1 = <span class="string">"25"</span>;</div><div class="line">stream1.str(string1);</div><div class="line"><span class="keyword">int</span> i;</div><div class="line">stream1 &gt;&gt; i;</div><div class="line"><span class="built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="built_in">endl</span>;  <span class="comment">// displays 25</span></div></pre></td></tr></table></figure>
+<h2 id="队列与栈"><a href="#队列与栈" class="headerlink" title="队列与栈"></a>队列与栈</h2><p>使用标准库的栈和队列时，先包含相关的头文件</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stack&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></div></pre></td></tr></table></figure>
+<p>定义栈如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; stk;</div></pre></td></tr></table></figure>
+<p>定义队列如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; q;</div></pre></td></tr></table></figure>
+<p>栈提供了如下的操作</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">s.empty()               <span class="comment">// 如果栈为空返回true，否则返回false  </span></div><div class="line">s.size()                <span class="comment">// 返回栈中元素的个数  </span></div><div class="line">s.pop()                 <span class="comment">// 删除栈顶元素但不返回其值  </span></div><div class="line">s.top()                 <span class="comment">// 返回栈顶的元素，但不删除该元素  </span></div><div class="line">s.push()                <span class="comment">// 在栈顶压入新元素</span></div></pre></td></tr></table></figure>
+<p>队提供了如下的操作</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">q.empty()               <span class="comment">// 如果队列为空返回true，否则返回false  </span></div><div class="line">q.size()                <span class="comment">// 返回队列中元素的个数  </span></div><div class="line">q.pop()                 <span class="comment">// 删除队列首元素但不返回其值  </span></div><div class="line">q.front()               <span class="comment">// 返回队首元素的值，但不删除该元素  </span></div><div class="line">q.push()                <span class="comment">// 在队尾压入新元素  </span></div><div class="line">q.back()                <span class="comment">// 返回队列尾元素的值，但不删除该元素</span></div></pre></td></tr></table></figure>
+<h3 id="优先队列"><a href="#优先队列" class="headerlink" title="优先队列"></a>优先队列</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">priority_queue&lt;<span class="keyword">int</span>&gt; Q; <span class="comment">//大顶堆，堆顶取得的元素为整个堆的最大元素</span></div><div class="line">priority_queue&lt;<span class="keyword">int</span>,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;,greater&lt;<span class="keyword">int</span>&gt; &gt; Q;</div><div class="line">                      <span class="comment">//小顶顶堆，堆顶取得的元素为整个堆的最小元素</span></div></pre></td></tr></table></figure>
+<h2 id="排序及删除相同元素"><a href="#排序及删除相同元素" class="headerlink" title="排序及删除相同元素"></a>排序及删除相同元素</h2><h3 id="vector与数组"><a href="#vector与数组" class="headerlink" title="vector与数组"></a>vector与数组</h3><h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3><table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sort</td>
+<td>对给定区间所有元素进行排序</td>
+</tr>
+<tr>
+<td>stable_sort</td>
+<td>对给定区间所有元素进行稳定排序</td>
+</tr>
+<tr>
+<td>partial_sort</td>
+<td>对给定区间所有元素部分排序</td>
+</tr>
+<tr>
+<td>partial_sort_copy</td>
+<td>对给定区间复制并排序</td>
+</tr>
+<tr>
+<td>nth_element</td>
+<td>找出给定区间的某个位置对应的元素</td>
+</tr>
+<tr>
+<td>is_sorted</td>
+<td>判断一个区间是否已经排好序</td>
+</tr>
+<tr>
+<td>partition</td>
+<td>使得符合某个条件的元素放在前面</td>
+</tr>
+<tr>
+<td>stable_partition</td>
+<td>相对稳定的使得符合某个条件的元素放在前面</td>
+</tr>
+</tbody>
+</table>
+<p>用法如下</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="keyword">int</span> a[]=&#123;<span class="number">8</span>,<span class="number">8</span>,<span class="number">7</span>,<span class="number">3</span>,<span class="number">7</span>,<span class="number">7</span>&#125;;</div><div class="line">sort(a,a+<span class="number">6</span>);</div><div class="line"></div><div class="line">partial_sort(a,a+<span class="number">6</span>);</div></pre></td></tr></table></figure>
+<p>输出为：3 7 7 7 8 8</p>
+<h3 id="删除相同元素"><a href="#删除相同元素" class="headerlink" title="删除相同元素"></a>删除相同元素</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line">、、、、、、、、、、、、、、、、、、、、、、、、</div></pre></td></tr></table></figure>
+<p>输出为：3 7 7 7 8 8</p>
+<h2 id="抽象容器——vector-list-deque"><a href="#抽象容器——vector-list-deque" class="headerlink" title="抽象容器——vector list deque"></a>抽象容器——vector list deque</h2><p>vector：</p>
+<p>list：</p>
+<p>deque：</p>
+<h2 id="cout输出double控制精度"><a href="#cout输出double控制精度" class="headerlink" title="cout输出double控制精度"></a>cout输出double控制精度</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iomanip&gt;</span></span></div><div class="line"><span class="keyword">double</span> ans=<span class="number">1.1</span>;</div><div class="line"><span class="built_in">cout</span>&lt;&lt;fixed&lt;&lt;setprecision(<span class="number">3</span>)&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</div></pre></td></tr></table></figure>
+<h2 id="结构体struct"><a href="#结构体struct" class="headerlink" title="结构体struct"></a>结构体struct</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"></div><div class="line"><span class="keyword">struct</span> JavaBean&#123;</div><div class="line">    <span class="keyword">int</span> j;</div><div class="line">    <span class="keyword">int</span> f;</div><div class="line">    <span class="keyword">double</span> s; <span class="comment">//j/f</span></div><div class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> JavaBean &amp;A) <span class="keyword">const</span>&#123;</div><div class="line">        <span class="keyword">return</span> s&gt;A.s;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>若使用sort，运算符重载必须重载“&lt;”</p>
+<h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/c/" rel="tag"># c++</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/11/jobdu1000-1014/" rel="next" title="Jobdu 1000-1010（未完待续）">
+                <i class="fa fa-chevron-left"></i> Jobdu 1000-1010（未完待续）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/13/jobdu1036-1044/" rel="prev" title="Jobdu 1036-1044（2007-2008年上海交通大学计算机研究生机试真题）">
+                Jobdu 1036-1044（2007-2008年上海交通大学计算机研究生机试真题） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="ttinch" />
+          <p class="site-author-name" itemprop="name">ttinch</p>
+           
+              <p class="site-description motion-element" itemprop="description">初学者的随笔</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ttinch" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/your-user-name" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#读取数量不定的操作符"><span class="nav-number">1.</span> <span class="nav-text">读取数量不定的操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串string"><span class="nav-number">2.</span> <span class="nav-text">字符串string</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常用操作"><span class="nav-number">2.1.</span> <span class="nav-text">常用操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符-字符串-与-数字-的转换（待补充）"><span class="nav-number">2.2.</span> <span class="nav-text">字符/字符串 与 数字 的转换（待补充）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#字符与数字的转换"><span class="nav-number">2.2.1.</span> <span class="nav-text">字符与数字的转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串与数字的转换"><span class="nav-number">2.2.2.</span> <span class="nav-text">字符串与数字的转换</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#数字转字符串：使用sprintf-函数"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">数字转字符串：使用sprintf()函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#字符串转数字：使用sscanf-函数"><span class="nav-number">2.2.2.2.</span> <span class="nav-text">字符串转数字：使用sscanf()函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用stringstream类"><span class="nav-number">2.2.2.3.</span> <span class="nav-text">使用stringstream类</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#队列与栈"><span class="nav-number">3.</span> <span class="nav-text">队列与栈</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#优先队列"><span class="nav-number">3.1.</span> <span class="nav-text">优先队列</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#排序及删除相同元素"><span class="nav-number">4.</span> <span class="nav-text">排序及删除相同元素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#vector与数组"><span class="nav-number">4.1.</span> <span class="nav-text">vector与数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#排序"><span class="nav-number">4.2.</span> <span class="nav-text">排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除相同元素"><span class="nav-number">4.3.</span> <span class="nav-text">删除相同元素</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#抽象容器——vector-list-deque"><span class="nav-number">5.</span> <span class="nav-text">抽象容器——vector list deque</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cout输出double控制精度"><span class="nav-number">6.</span> <span class="nav-text">cout输出double控制精度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结构体struct"><span class="nav-number">7.</span> <span class="nav-text">结构体struct</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#队列"><span class="nav-number">8.</span> <span class="nav-text">队列</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ttinch</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+
+  
+
+</body>
+</html>
